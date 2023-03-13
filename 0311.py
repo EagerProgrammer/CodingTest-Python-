@@ -2,17 +2,21 @@
 #예를 들어 n이 23이면 [a,b,c] 와 [d,e,f]의 두개의 배열에서 하나씩 골라서 만들수 있는 문자열을 리스트로 반환해준다.
 from itertools import product
 def solution(n):
-    list1 = n.split('')
+    if len(n) == 0:
+        return []
+    list5 = []
+    list1 = list(n)
     list2 = [['a','b','c'],['d','e','f'],['g','h','i'],['j','k','l'],['m','n','o'],['p','q','r','s'],['t','u','v'],['w','x','y','z']]
     list3 = []
-    list5 = []
     for i in list1:
-        list3 += list2[i-2]
-    list3 = list(product(*list3))
-    for i in list3:
+        i = int(i)
+        list3.append(list2[i-2])
+    list4 = list(product(*list3))
+    for i in list4:
         temp = ''
         for j in i:
             temp += j
             if len(temp) == len(i):
                 list5.append(temp)
     return list5
+    
