@@ -7,10 +7,10 @@ def solution(arr,M,N):
     while deq:
         x,y,start = deq
         for i in range(4):
-            x = idx[i] + x
-            y = idy[i] + y
-            if x < M and x > 0 and y < N and y > 0:
-                if arr[x][y] == 0:
+            nx = idx[i] + x
+            ny = idy[i] + y
+            if nx < M and nx > 0 and ny < N and ny > 0:
+                if arr[nx][ny] == 0:
                     break
                 else:
                     start += 1
@@ -19,3 +19,4 @@ def solution(arr,M,N):
                 continue
         answer = start
     return answer
+ 
